@@ -1,0 +1,231 @@
+/* Empty. Add your own CSS if you like */
+.slider-slide h3 {
+  margin-top: 10px;
+}
+
+.scroll {
+  height: 100%;
+}
+
+.tabbed-slidebox .tsb-icons:after {
+  display: none;
+}
+
+.item.item-thumbnail-left {
+  text-align: left;
+}
+
+.item.item-thumbnail-left p {
+  color: red;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.item-thumbnail-left span {
+  font-size: 21px;
+  color: #ffc900;;
+}
+
+#laws {
+  border-top: none;
+  height: 100%;
+  padding-bottom: 90px;
+}
+
+#laws a:first-child {
+  border-top: none;
+}
+
+#laws ion-scroll {
+  height: 100%;
+}
+
+.video-call {
+  position: absolute;
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #ff5252;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  bottom: 70px;
+  right: 20px;
+  box-shadow: 1px 1px 1px #aa0000;
+  vertical-align: middle;
+  text-indent: 2px;
+}
+
+.pane .slider {
+  height: 100%;
+}
+
+.laws-bar {
+  background: #AA0000 !important;
+}
+
+.main-content {
+  padding: 45px 30px;
+  text-align: center;
+
+}
+
+.list-laws {
+  margin-bottom: 0;
+  border-bottom: 1px solid #ffc900;
+}
+
+.pre-laws {
+  position: absolute;
+  left: 10px;
+  top: 52px;
+  font-size: 30px;
+  width: 26px;
+}
+
+.next-laws {
+  position: absolute;
+  right: 10px;
+  font-size: 30px;
+  top: 52px;
+  width: 26px;
+}
+
+.modal-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -75px;
+}
+
+.btn-app {
+  width: 150px;
+  height: 40px;
+  background: #aa0000;
+  color: #eaeb76;
+  border: none;
+  font-weight: bold;
+}
+
+.modal-bottom p {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+
+.main-content .slider {
+  overflow: scroll;
+}
+
+.main-content h3 {
+  font-size: 19px;
+  margin-top: 12px;
+  font-weight: 100;
+  color: #564e4e;
+  text-transform: uppercase;
+}
+.main-content img {
+  padding: 5px;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+}
+.description-fa span {
+  font-size: 22px;
+  margin-left: 8px;
+}
+
+.fa-yellow {
+  color: #ffc900;
+  -webkit-animation: myMove 2s;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+@-webkit-keyframes myMove {
+  0% {
+    -ms-transform: scale(1, 1); /* IE 9 */
+    -webkit-transform: scale(1, 1); /* Safari */
+    transform: scale(1, 1);
+  }
+  50% {
+    -ms-transform: scale(1.5, 1.5); /* IE 9 */
+    -webkit-transform: scale(1.5, 1.5); /* Safari */
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    -ms-transform: scale(1, 1); /* IE 9 */
+    -webkit-transform: scale(1, 1); /* Safari */
+    transform: scale(1, 1);
+  }
+}
+
+/* Standard syntax */
+@keyframes myMove {
+  0% {
+    -ms-transform: scale(1, 1); /* IE 9 */
+    -webkit-transform: scale(1, 1); /* Safari */
+    transform: scale(1, 1);
+  }
+  50% {
+    -ms-transform: scale(1.5, 1.5); /* IE 9 */
+    -webkit-transform: scale(1.5, 1.5); /* Safari */
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    -ms-transform: scale(1, 1); /* IE 9 */
+    -webkit-transform: scale(1, 1); /* Safari */
+    transform: scale(1, 1);
+  }
+}
+
+.fa-none {
+  color: #a2a2a2;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.law-about {
+  padding: 10px;
+}
+.law-about p{
+  text-align: left;
+  font-style: italic;
+  color: black;
+  font-size: 16px;
+}
+.law-about h3 {
+  text-align: left;
+  color: #aa0000;
+  margin-top: 30px;
+}
+.law-about img {
+  width: 150px;
+  text-align: left;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 6px;
+}
+.law-rate {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+}
+.law-rate .btn-app {
+  width: 100%!important;
+}
+.box-rate {
+  background: #ececec;
+  color: #aa0000;
+}
+.box-rate .col-75 {
+  font-size: 16px;
+}
+.search-law {
+  margin: 0 5px 2px 5px!important;
+}
+.search-law .item-input {
+  border: none;
+  border-bottom: 1px solid #cdcdcd;
+}

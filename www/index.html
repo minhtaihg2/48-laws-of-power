@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
+
+  <link href="assets/lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tabSlideBox.css"/>
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+
+  <!-- ionic/angularjs js -->
+  <script src="assets/lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <!--Script here-->
+
+  <script src="components/app.module.js"></script>
+  <script src="components/app.router.js"></script>
+  <script src="assets/js/tabSlideBox.js"></script>
+
+  <script src="components/main/mainController.js"></script>
+  <script src="views/shared/modalController.js"></script>
+  <script src="components/main/mainService.js"></script>
+  <!--End load script-->
+
+
+</head>
+<body ng-app="starter" animation="slide-left-right-ios7" ng-controller="MainCtrl">
+
+<ion-pane>
+  <ion-content>
+    <tab-slide-box>
+      <div class="tsb-icons">
+        <div class="tsb-ic-wrp">
+          <ion-scroll direction="x" class="tsb-hscroll">
+            <a href="javascript:;" class="ion-home1">LAWS</a>
+            <a href="javascript:;" class="ion-ios-game-controller-b1">NOTIFICATIONS</a>
+            <a href="javascript:;" class="ion-email1">ABOUT</a>
+            <a href="javascript:;" class="ion-model-s1">RATE</a>
+          </ion-scroll>
+        </div>
+      </div>
+
+      <ion-slide-box delegate-handle="main-layout" show-pager="false" on-slide-changed="slideHasChanged1($index)">
+        <ion-slide zooming="true" direction="xy">
+          <div class="list list-inset search-law">
+            <label class="item item-input">
+              <i class="icon ion-ios-search-strong placeholder-icon"></i>
+              <input type="text" ng-model="search.title" placeholder="Enter a text to search...">
+            </label>
+          </div>
+          <button class="video-call"><i class="ion-videocamera"></i></button>
+          <div class="list" id="laws">
+            <ion-scroll>
+            <a ng-repeat="item in laws | filter:search" ng-click="openModal($index)" class="item item-thumbnail-left" href="#">
+              <img ng-src="{{item.images}}">
+
+              <h2>{{item.title}}</h2>
+
+              <p>{{item.description}}</p>
+              <span ng-if="item.favorite == true"><i class="ion-heart"></i></span>
+            </a>
+            </ion-scroll>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <ul class="check-list">
+            <li class="item item-toggle" style="text-align: left;">
+              ALLOW NOTIFICATIONS
+              <label class="toggle toggle-assertive">
+                <input type="checkbox" ng-model="checked" ng-click="allowNotification()">
+                <div class="track">
+                  <div class="handle"></div>
+                </div>
+              </label>
+            </li>
+          </ul>
+          <div ng-show="checked">
+            <label style="text-align: left;" class="item-input item-stacked-label">
+              <span style="color: #aa0000;" class="input-label">LAW HOUR</span>
+              <input type="text" placeholder="12:00">
+            </label>
+            <button class="btn-app">SELECT HOUR</button>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="law-about">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            </p>
+            <h3>ABOUT THE AUTHOR</h3>
+            <div>
+              <img
+                src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/13091892_963920333722895_1930350580377200510_n.jpg?oh=9da4b1d3d72392712f75547c43291ac9&oe=5890AF1F"
+                alt=""/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="law-rate">
+            <div class="box-rate">
+              <div class="row">
+                <div class="col col-75">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
+                <div class="col">
+                  <button class="btn-app">RATE</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </tab-slide-box>
+  </ion-content>
+</ion-pane>
+
+
+</body>
+</html>

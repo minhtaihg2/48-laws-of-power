@@ -1,0 +1,32 @@
+<ion-modal-view  ng-controller="MyModalController">
+  <ion-header-bar class="bar bar-header bar-positive laws-bar">
+    <h1 class="title">LAWS</h1>
+    <button class="button button-clear button-primary" ng-click="closeModal()">Close</button>
+  </ion-header-bar>
+  <ion-view view-title="Intro" class="main-content">
+    <div class="pre-laws" ng-click="previous()">
+      <i class="ion-ios-arrow-left"></i>
+    </div>
+    <div class="next-laws" ng-click="next()">
+      <i class="ion-ios-arrow-right"></i>
+    </div>
+    <ion-slide-box active-slide="myActiveSlide" pager-click="true" show-pager="false" delegate-handle="burgers" on-slide-changed="checkIndex($index)">
+      <ion-slide ng-repeat="item in laws">
+        <h3>{{item.title}}</h3>
+        <div id="logo">
+          <img src="{{item.images}}">
+        </div>
+        <p class="description-fa" style="text-transform: uppercase;color: #aa0000">
+          {{item.description}} <span ng-click="favoriteLaws(item)"><i ng-class="{ 'fa-yellow' : item.favorite == true ,'fa-none' : item.favorite == false}" class="ion-heart"></i></span>
+        </p>
+        <p style="text-align: left;font-style: italic">
+          {{item.content}}
+        </p>
+      </ion-slide>
+    </ion-slide-box>
+    <div class="modal-bottom">
+      <button class="btn-app">SHARE</button>
+      <p>{{myActiveSlide + 1}}/{{laws.length}}</p>
+    </div>
+  </ion-view>
+</ion-modal-view>
